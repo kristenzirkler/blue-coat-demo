@@ -1,0 +1,30 @@
+@import 'variables';
+
+@import 'reset';
+@import 'icons';
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: darken($page-background,5);
+  position: relative;
+}
+body, button, label {
+  font-family: 'Futura', 'Helvetica Neue', arial, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+/* Responsive Page Layout */
+
+@media all and (min-width: 420px) {
+
+}
+
+@media all and (min-width: 800px) {
+
+}
