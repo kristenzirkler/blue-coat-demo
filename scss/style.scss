@@ -4,7 +4,6 @@
 @import 'icons';
 //@import 'pie-circle';
 @import 'orbit-circle';
-@import 'circle-modal';
 @import 'video';
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
@@ -24,20 +23,10 @@ body, button, label {
 }
 a {
   text-decoration: none;
-  outline: none;
   color: $link;
   &:hover {
   	color: darken($link, 10);
   }
-}
-.cd-modal-close {
-	z-index: 4;
-}
-.cd-modal {
-	z-index: 3;
-}
-.cd-modal-action {
-	z-index: 2;
 }
 .intro {
 	h1 {
@@ -88,52 +77,25 @@ a {
     background: rgba(darken($main-color,30),.4);
     text-align: center;
     overflow: hidden;
-    display: table; 
-    height: 100px;
-    width: 100px;
-    &:hover {
-    	background: darken($main-color,30);
-    	color: #fff;
-	}
-  }
-  span {
-  	display: table-cell; 
-	vertical-align: middle; 
-	text-align: center;
-  }
-  i {
-	display: block;
-  	margin: 0 auto .2em;
   }
 }
 .circle-container-2 {
-  @include putOnCircle(3, 300px, 200px, false); 
+  @include putOnCircle(3, 400px, 150px, false); 
   background: darken($main-color,43);
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -150px; /* container-size / 2 */
-  margin-top: -150px; /* container-size / 2 */
+  margin-left: -220px; /* container-size / 2 */
+  margin-top: -220px; /* container-size / 2 */
   
   a {
     background: #fff;
     color: #000;
     text-align: center;
     overflow: hidden;
-    padding-top: 50px;
     &:hover {
-    	color: $main-color;
+    	background: #fff;
 	}
-  }
-  span {
-    font-size: 1.4em;
-    font-weight: bold;
-    display: block;
-  }
-  em {
-  	font-style: normal;
-  	display: block;
-  	padding: .5em 2em;
   }
 }
 
