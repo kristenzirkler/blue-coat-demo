@@ -2,6 +2,10 @@
 
 @import 'reset';
 @import 'icons';
+//@import 'pie-circle';
+@import 'orbit-circle';
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 
 * {
   -webkit-box-sizing: border-box;
@@ -13,10 +17,63 @@ body {
   position: relative;
 }
 body, button, label {
-  font-family: 'Futura', 'Helvetica Neue', arial, sans-serif;
+	font-family: 'Roboto Condensed', "Helvetica Neue", "Arial Black", sans-serif; 
+	color: #eee;
 }
 a {
   text-decoration: none;
+  color: $link;
+  &:hover {
+  	color: darken($link, 10);
+  }
+}
+.intro {
+	h1 {
+		font-size: 3em;
+		text-align: center;
+		margin: 1em 0;
+	}
+}
+.container {
+	position: relative;
+	width: 80vw;
+	height: 80vw;
+	margin: 0 10vw;
+}
+.circle-container {
+  @include putOnCircle(9, 60vw, 20vw, false); 
+  background: darken($main-color,40);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30vw;
+  margin-top: -30vw;
+  a {
+    //background: darken($main-color,30);
+    text-align: center;
+    //overflow: hidden;
+	vertical-align: middle;
+	span {
+        height: 10vw; /* item-size / 2 */
+        margin-top: 5vw; /* item-size / 4 */
+        line-height: 1.3em;
+    }
+  }
+}
+.circle-container-2 {
+  @include putOnCircle(3, 26vw, 14vw, false); 
+  background: darken($main-color,43);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -13vw; /* container-size / 2 */
+  margin-top: -13vw; /* container-size / 2 */
+  
+  a {
+    background: darken($main-color,30);
+    text-align: center;
+    overflow: hidden;
+  }
 }
 
 /* Responsive Page Layout */

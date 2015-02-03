@@ -1,0 +1,92 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
+
+$circle-color-1: #00aeef;
+$circle-color-highlight: lighten($circle-color-1,10);
+$circle-size: 80vw;
+
+
+/**
+ * Mixin to put items on a circle
+ * [1] - Allows children to be absolutely positioned
+ * [2] - Allows the mixin to be used on a list
+ * [3] - In case box-sizing: border-box has been enabled
+ * [4] - Allows any type of direct children to be targeted
+ */
+ @mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+          transform: $transforms;
+}
+@mixin box-sizing( $type: border-box ) {
+    -webkit-box-sizing: $type;
+       -moz-box-sizing: $type;
+         -o-box-sizing: $type;
+        -ms-box-sizing: $type;
+            box-sizing: $type;
+}
+
+@mixin putOnCircle( 
+          $nb-items, //Number of items
+          $circle-size, //Parent size
+          $item-size, //Item size
+          $class-for-IE: false //Base class name, false means use of pseudo-selectors
+       ) {
+  $half-item:     $item-size / 2;
+  $half-parent: $circle-size / 2;
+  
+  position: relative;               /* [1] */
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%; 
+  list-style: none;                 /* [2] */ 
+  @include box-sizing(content-box); /* [3] */ 
+  
+  > * {                             /* [4] */
+    display: block;
+    position: absolute;
+    top:  50%; 
+    left: 50%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -$half-item;
+  
+    $angle: 360 / $nb-items;
+    $rot: 30;
+    @for $i from 1 to $nb-items+1 {
+      
+      // If no support for IE8-
+      
+      @if $class-for-IE == false {
+        &:nth-of-type(#{$i}) {
+          @include transform(rotate(#{$rot}deg) translate($half-parent) rotate(-#{$rot}deg));
+        }
+      }
+      
+      // If support for IE8-  
+      
+      @else {
+        &.#{$class-for-IE}#{$i} {
+          // If CSS transforms are not supported
+          $mt: sin($rot * pi() / 180) * $half-parent - $half-item;
+          $ml: cos($rot * pi() / 180) * $half-parent - $half-item;
+          margin: $mt 0 0 $ml;
+        }
+      }
+      $rot: $rot + $angle;
+    }
+  }
+  a {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    line-height: $item-size; /* item-size */
+  }
+}
