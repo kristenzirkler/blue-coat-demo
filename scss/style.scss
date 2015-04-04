@@ -4,6 +4,8 @@
 @import 'icons';
 //@import 'pie-circle';
 @import 'orbit-circle';
+@import 'circle-modal';
+@import 'video';
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 
@@ -23,9 +25,19 @@ body, button, label {
 a {
   text-decoration: none;
   color: $link;
+  outline: none;
   &:hover {
   	color: darken($link, 10);
   }
+}
+.cd-modal-close {
+	z-index: 4;
+}
+.cd-modal {
+	z-index: 3;
+}
+.cd-modal-action {
+	z-index: 2;
 }
 .intro {
 	h1 {
@@ -36,43 +48,102 @@ a {
 }
 .container {
 	position: relative;
-	width: 80vw;
-	height: 80vw;
-	margin: 0 10vw;
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+	.background {
+		position: absolute;
+	    top: 0; bottom: 0;
+	    left: 0; right: 0;
+	    z-index: -1;
+		span {
+			display: block;
+			position: absolute;
+		    top: 0; bottom: 0;
+		    left: 0; right: 0;
+		    border-radius: 50%;
+		}
+	}
+	.cr-one {
+		background: darken($main-color,42);
+	}
+	.cr-two {
+		background: darken($main-color,40);
+		margin: 25px;
+	}
+	.cr-three {
+		background: darken($main-color,38);
+		margin: 80px;
+	}
 }
 .circle-container {
-  @include putOnCircle(9, 60vw, 20vw, false); 
-  background: darken($main-color,40);
+  @include putOnCircle(9, 800px, 100px, false); 
+  background: #000;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -30vw;
-  margin-top: -30vw;
+  margin-left: -400px;
+  margin-top: -400px;
   a {
-    //background: darken($main-color,30);
+    background: rgba(darken($main-color,30),.4);
     text-align: center;
-    //overflow: hidden;
-	vertical-align: middle;
-	span {
-        height: 10vw; /* item-size / 2 */
-        margin-top: 5vw; /* item-size / 4 */
-        line-height: 1.3em;
-    }
+    overflow: hidden;
+    display: table; 
+    height: 100px;
+    width: 100px;
+    &:hover {
+    	background: darken($main-color,30);
+    	color: #fff;
+	}
+	&.cd-active {
+		background: darken($main-color,30);
+	}
+  }
+  span {
+  	display: table-cell; 
+	vertical-align: middle; 
+	text-align: center;
+  }
+  i {
+	display: block;
+  	margin: 0 auto .2em;
+  }
+  .cd-modal-bg {
+    height: 100px;
+    width: 100px;
+    display: block;
+    background: darken($main-color,30);
+
   }
 }
 .circle-container-2 {
-  @include putOnCircle(3, 26vw, 14vw, false); 
+  @include putOnCircle(3, 300px, 200px, false); 
   background: darken($main-color,43);
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -13vw; /* container-size / 2 */
-  margin-top: -13vw; /* container-size / 2 */
+  margin-left: -150px; /* container-size / 2 */
+  margin-top: -150px; /* container-size / 2 */
   
   a {
-    background: darken($main-color,30);
+    background: #fff;
+    color: #000;
     text-align: center;
     overflow: hidden;
+    padding-top: 50px;
+    &:hover {
+    	color: $main-color;
+	}
+  }
+  span {
+    font-size: 1.4em;
+    font-weight: bold;
+    display: block;
+  }
+  em {
+  	font-style: normal;
+  	display: block;
+  	padding: .5em 2em;
   }
 }
 
