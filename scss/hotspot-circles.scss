@@ -1,0 +1,88 @@
+$circle-size: 94px;
+
+$prepare-top: 8px;
+$prepare-left: 506px;
+
+$protect-top: 244px;
+$protect-left: 741px;
+
+$detect-top: 479px;
+$detect-left: 506px;
+
+$respond-top: 244px;
+$respond-left: 270px;
+
+.circle {
+  width: $circle-size;
+  height: $circle-size;
+  display: block;
+  border: 4px solid transparent;
+  cursor: hand;
+  //border-color: #f00;
+  span {
+    width: 0;
+    height: 24px;
+    overflow: hidden;
+    top: $circle-size - 15px;
+    left: $circle-size*2 + 15px;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    color: #fff;
+    font-size: 1.5em;
+    background: rgba(#000,.5);
+  }
+  &:hover {
+    box-shadow: 0 0 50px #000;
+    border-color: #fff;
+    span {
+      width: $circle-size*3;
+      @include transition(all 1s);
+    }
+  }
+}
+.circle-full {
+  width: $circle-size*2;
+  height: $circle-size*2;
+  @include border-radius(50%);
+  span {
+    display: none;
+  }
+}
+.circle-TL {
+  @include border-radius(0 0 $circle-size 0);
+}
+.circle-TR {
+  @include border-radius(0 0 0 $circle-size);
+}
+.circle-BL {
+  @include border-radius(0 $circle-size 0 0);
+}
+.circle-BR {
+  @include border-radius($circle-size 0 00);
+}
+.prepare, .protect, .detect, .respond {
+  position: absolute;
+  width: $circle-size*2;
+  height: $circle-size*2;
+  z-index: 2;
+}
+.prepare {
+  top: $prepare-top;  
+  left: $prepare-left;
+}
+.protect {
+  top: $protect-top;  
+  left: $protect-left;
+  .circle {
+    float: left;
+  }
+}
+.detect {
+  top: $detect-top;  
+  left: $detect-left;
+}
+.respond {
+  top: $respond-top;  
+  left: $respond-left;
+}

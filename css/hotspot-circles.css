@@ -1,0 +1,28 @@
+.circle {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+  text-indent: -5000px;
+  display: block; }
+  .circle:hover {
+    background: #0f0; }
+
+.circle-TL {
+  border-radius: 0 0 200px 0;
+  -moz-border-radius: 0 0 200px 0;
+  -webkit-border-radius: 0 0 200px 0; }
+
+.circle-TR {
+  border-radius: 0 0 0 200px;
+  -moz-border-radius: 0 0 0 200px;
+  -webkit-border-radius: 0 0 0 200px; }
+
+.circle-BL {
+  border-radius: 0 200px 0 0;
+  -moz-border-radius: 0 200px 0 0;
+  -webkit-border-radius: 0 200px 0 0; }
+
+.circle-BR {
+  border-radius: 200px 0 0;
+  -moz-border-radius: 200px 0 0;
+  -webkit-border-radius: 200px 0 0; }

@@ -6,3 +6,15 @@ $main-color: #00aeef;
 $accent-font: 'Times New Roman', sans-serif;
 
 $link: $main-color;
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin transition($transitions) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -o-transition: $transitions;
+    transition: $transitions;
+}
