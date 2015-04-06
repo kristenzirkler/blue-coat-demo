@@ -1,10 +1,7 @@
 @import 'variables';
 
 @import 'reset';
-@import 'icons';
-//@import 'pie-circle';
-@import 'orbit-circle';
-@import 'circle-modal';
+@import 'hotspot-circles';
 @import 'video';
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
@@ -30,123 +27,42 @@ a {
   	color: darken($link, 10);
   }
 }
-.cd-modal-close {
-	z-index: 4;
-}
-.cd-modal {
-	z-index: 3;
-}
-.cd-modal-action {
-	z-index: 2;
-}
-.intro {
-	h1 {
-		font-size: 3em;
-		text-align: center;
-		margin: 1em 0;
-	}
-}
-.container {
-	position: relative;
-	width: 1000px;
-	height: 1000px;
-	margin: 0 auto;
-	.background {
-		position: absolute;
-	    top: 0; bottom: 0;
-	    left: 0; right: 0;
-	    z-index: -1;
-		span {
-			display: block;
-			position: absolute;
-		    top: 0; bottom: 0;
-		    left: 0; right: 0;
-		    border-radius: 50%;
-		}
-	}
-	.cr-one {
-		background: darken($main-color,42);
-	}
-	.cr-two {
-		background: darken($main-color,40);
-		margin: 25px;
-	}
-	.cr-three {
-		background: darken($main-color,38);
-		margin: 80px;
-	}
-}
-.circle-container {
-  @include putOnCircle(9, 800px, 100px, false); 
-  background: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -400px;
-  margin-top: -400px;
-  a {
-    background: rgba(darken($main-color,30),.4);
-    text-align: center;
-    overflow: hidden;
-    display: table; 
-    height: 100px;
-    width: 100px;
-    &:hover {
-    	background: darken($main-color,30);
-    	color: #fff;
-	}
-	&.cd-active {
-		background: darken($main-color,30);
-	}
-  }
-  span {
-  	display: table-cell; 
-	vertical-align: middle; 
-	text-align: center;
-  }
-  i {
-	display: block;
-  	margin: 0 auto .2em;
-  }
-  .cd-modal-bg {
-    height: 100px;
-    width: 100px;
-    display: block;
-    background: darken($main-color,30);
 
-  }
+.content {
+  position: relative;
+  width: 1200px;
+  height: 675px;
+  margin: 0 auto;
 }
-.circle-container-2 {
-  @include putOnCircle(3, 300px, 200px, false); 
-  background: darken($main-color,43);
+.home-video-background {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -150px; /* container-size / 2 */
-  margin-top: -150px; /* container-size / 2 */
-  
-  a {
-    background: #fff;
-    color: #000;
-    text-align: center;
-    overflow: hidden;
-    padding-top: 50px;
-    &:hover {
-    	color: $main-color;
-	}
-  }
-  span {
-    font-size: 1.4em;
-    font-weight: bold;
-    display: block;
-  }
-  em {
-  	font-style: normal;
-  	display: block;
-  	padding: .5em 2em;
-  }
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
+
+.site-design {
+  position: fixed;
+  z-index: 10000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  a {
+    display: block;
+    color: #fff;
+    background: #000;
+    opacity: .5;
+    font-size: .8em;
+    text-align: center;
+    padding: .5em;
+    @include transition(all .3s);
+    &:hover {
+      opacity: 1;
+
+    }
+  }
+}
 /* Responsive Page Layout */
 
 @media all and (min-width: 420px) {
