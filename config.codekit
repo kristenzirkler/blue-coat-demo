@@ -47,6 +47,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/img\/intro-background.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 283444,
+		"inputAbbreviatedPath": "\/img\/intro-background.jpg",
+		"outputAbbreviatedPath": "\/img\/intro-background.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/intro-placeholder.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
