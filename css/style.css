@@ -271,22 +271,22 @@ table {
   z-index: 2; }
 
 .prepare {
-  top: 8px;
+  top: 19px;
   left: 506px; }
 
 .protect {
   top: 244px;
-  left: 741px; }
+  left: 730px; }
   .protect .circle {
     float: left; }
 
 .detect {
-  top: 479px;
+  top: 467px;
   left: 506px; }
 
 .respond {
   top: 244px;
-  left: 270px; }
+  left: 281px; }
 
 body {
   position: relative; }
