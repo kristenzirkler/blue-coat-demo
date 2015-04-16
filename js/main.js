@@ -12,7 +12,7 @@ $(function(){
     if (videoID === '') {
       $('#video-player-ctr').html('No Video Found');
     } else {
-      $('#video-player-ctr').html('<video class="video-player" autoplay controls><source src="http://104.236.213.243/wp-content/uploads/videos/'+videoID+'.mp4" type="video/mp4" /><source src="http://104.236.213.243/wp-content/uploads/videos/'+videoID+'.webm" type="video/webm" />');
+      $('#video-player-ctr').html('<video class="video-player" width="100%" height="675px" autoplay controls><source src="http://104.236.213.243/wp-content/uploads/videos/'+videoID+'.mp4" type="video/mp4" /><source src="http://104.236.213.243/wp-content/uploads/videos/'+videoID+'.webm" type="video/webm" />');
     }
     
   });
