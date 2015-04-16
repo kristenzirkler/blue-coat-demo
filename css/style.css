@@ -264,7 +264,7 @@ table {
   -moz-border-radius: 94px 0 0;
   -webkit-border-radius: 94px 0 0; }
 
-.prepare, .protect, .detect, .respond {
+.prepare, .protect, .detect, .respond, .gin {
   position: absolute;
   width: 188px;
   height: 188px;
@@ -287,6 +287,13 @@ table {
 .respond {
   top: 244px;
   left: 281px; }
+
+.gin {
+  top: 268px;
+  left: 529px; }
+  .gin .circle-full {
+    width: 141px;
+    height: 141px; }
 
 body {
   position: relative; }
