@@ -47,8 +47,14 @@
 
   <video class="home-video-background" id="home-video-background" width="1200" height="675" autoplay loop poster="img/intro-background.jpg">
       <source src="http://104.236.213.243/wp-content/uploads/videos/background-loop.mp4" type="video/mp4" />
-      <source src="http://104.236.213.243/wp-content/uploads/videos/video.ogv" type="video/ogg" />
       <source src="http://104.236.213.243/wp-content/uploads/videos/background-loop.webm" type="video/webm" />
+      <object type="application/x-shockwave-flash" data="js/vendor/player.swf" width="1200" height="675">
+          <param name="allowfullscreen" value="true">
+          <param name="allowscriptaccess" value="always">
+          <param name="flashvars" value="file=http://104.236.213.243/wp-content/uploads/videos/background-loop.mp4">
+          <!--[if IE]><param name="movie" value="js/vendor/player.swf"><![endif]-->
+          <p>Your browser can't play HTML5 video. <a href="http://104.236.213.243/wp-content/uploads/videos/background-loop.webm"> Download it</a> instead.</p>
+      </object>
   </video>
 </div>
 
@@ -58,7 +64,6 @@
         <div id="video-player-ctr">Video</div>
     </div>
 </div>
-
 
 <!--div class="site-design">
   <a class="made-in-az" href="http://www.kristenzirkler.com">
